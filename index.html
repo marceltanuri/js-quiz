@@ -1,0 +1,30 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+fetch("https://api.mailjet.com/v3.1/send", {
+  body: {
+  "Messages":[
+    {
+      "From": {
+        "Email": "marcel.tanuri@gmail.com",
+        "Name": "Marcel"
+      },
+      "To": [
+        {
+          "Email": "marcel.tanuri@gmail.com",
+          "Name": "Marcel"
+        }
+      ],
+      "Subject": "My first Mailjet email",
+      "TextPart": "Greetings from Mailjet.",
+      "HTMLPart": "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
+      "CustomID": "AppGettingStartedTest"
+    }
+  ]
+},
+  headers: {
+    Authorization: "Basic Njg1MDBiZmY1Zjg2MzQyZWFlYTgwNDkxMGY3M2JjMzA6ZmQwZThlNzc5NWRlNGY0OTNhOTc4ZDU1M2E4MzJkNzA=",
+    "Content-Type": "application/json"
+  },
+  method: "POST"
+})
+</script>
