@@ -1,5 +1,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://smtpjs.com/v3/smtp.js">
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
 Email.send({
     Host : "smtp.elasticemail.com",
     Username : "marcel.tanuri@gmail.com",
@@ -10,5 +11,5 @@ Email.send({
     Body : "Dados pessoais:"
 }).then(
   message => alert(message)
-);
+);  
 </script>
