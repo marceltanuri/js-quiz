@@ -20,13 +20,11 @@
             <h1>Controle de Acesso</h1>
           </div>
         </div>
-        
-            <video muted class="video-background" preload="none" loop="loop" autoplay="autoplay" width="820" height="640" controls>
-                <source src="Portugues.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        
-        <div id="dadospessoais">
+        <div id="video">
+            <iframe src="https://drive.google.com/file/d/1eBF0esEYB5aAcm0BEaCWTgqRMx0lgrPz/preview" width="640" height="480"></iframe>
+            <button type="button" onclick="$('#video').hide(400); $('#dadospessoais').show(400);" class="btn btn-primary">Próximo</button>
+        </div> 
+        <div id="dadospessoais" style="display: none;">
             <form>
                 <div class="form-group">
                 <label for="nome">Nome Completo</label>
@@ -48,6 +46,7 @@
                     <label for="funcao">Telefone</label>
                     <input type="text" class="form-control" id="telefone">
                 </div>
+                <button type="button" onclick="$('#dadospessoais').hide(400); $('#video').show(400);" class="btn btn-primary">Anterior</button>
                 <button type="button" onclick="$('#dadospessoais').hide(400); $('#questao1').show(400);" class="btn btn-primary">Próximo</button>
             </form>
         </div>
