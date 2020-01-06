@@ -1,15 +1,276 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+ </head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-sm text-center">
+            <h1>Controle de Acesso</h1>
+          </div>
+        </div>
+        
+            <video muted class="video-background" preload="none" loop="loop" autoplay="autoplay" width="820" height="640" controls>
+                <source src="Portugues.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        
+        <div id="dadospessoais">
+            <form>
+                <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" class="form-control" id="nome">
+                </div>
+                <div class="form-group">
+                    <label for="cpf">CPF</label>
+                    <input type="number" class="form-control" id="cpf">
+                </div>
+                <div class="form-group">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" class="form-control" id="empresa">
+                </div>
+                <div class="form-group">
+                    <label for="funcao">Função</label>
+                    <input type="text" class="form-control" id="funcao">
+                </div>
+                <div class="form-group">
+                    <label for="funcao">Telefone</label>
+                    <input type="text" class="form-control" id="telefone">
+                </div>
+                <button type="button" onclick="$('#dadospessoais').hide(400); $('#questao1').show(400);" class="btn btn-primary">Próximo</button>
+            </form>
+        </div>
+        <div id="questao1" class="questao" style="display: none;">
+            <h4>Questão 01 </h4>
+            <span>Quantas estrelas tem a bandeira do Brasil</span>
+            <br/><br/>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q1optradio">Option 1
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q1optradio">Option 2
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q1optradio">Option 3
+                </label>
+              </div>
+            <br/><br/>
+            <button type="button" onclick="$('#questao1').hide(400); $('#dadospessoais').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="$('#questao1').hide(400); $('#questao2').show(400);" class="btn btn-primary">Próximo</button>
+        </div>
+        <div id="questao2" class="questao" style="display: none;">
+            <h4>Questão 02 </h4>
+            <span>Quantas letras tem a bandeira do Brasil</span>
+            <br/><br/>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q2optradio">Option 1
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q2optradio">Option 2
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q2optradio">Option 3
+                </label>
+              </div>
+            <br/><br/>
+            <button type="button" onclick="$('#questao2').hide(400); $('#questao1').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="$('#questao2').hide(400); $('#questao3').show(400);" class="btn btn-primary">Próximo</button>
+        </div>
+        <div id="questao3" class="questao" style="display: none;">
+            <h4>Questão 03 </h4>
+            <span>Quantas frases tem a bandeira do Brasil</span>
+            <br/><br/>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q3optradio">Option 1
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q3optradio">Option 2
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q3optradio">Option 3
+                </label>
+              </div>
+            <br/><br/>
+            <button type="button" onclick="$('#questao3').hide(400); $('#questao2').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="$('#questao3').hide(400); $('#questao4').show(400);" class="btn btn-primary">Próximo</button>
+        </div>
+        <div id="questao4" class="questao" style="display: none;">
+            <h4>Questão 04 </h4>
+            <span>Quantas palavras tem a bandeira do Brasil</span>
+            <br/><br/>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q4optradio">Option 1
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q4optradio">Option 2
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q4optradio">Option 3
+                </label>
+              </div>
+            <br/><br/>
+            <button type="button" onclick="$('#questao4').hide(400); $('#questao3').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="$('#questao4').hide(400); $('#questao5').show(400);" class="btn btn-primary">Próximo</button>
+        </div>
+        <div id="questao5" class="questao" style="display: none;">
+            <h4>Questão 05 </h4>
+            <span>Quantas vogais tem a bandeira do Brasil</span>
+            <br/><br/>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q5optradio">Option 1
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q5optradio">Option 2
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q5optradio">Option 3
+                </label>
+              </div>
+            <br/><br/>
+            <button type="button" onclick="$('#questao5').hide(400); $('#questao4').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="$('#questao5').hide(400); $('#questao6').show(400);" class="btn btn-primary">Próximo</button>
+        </div>
+        <div id="questao6" class="questao" style="display: none;">
+            <h4>Questão 06 </h4>
+            <span>Quantas consoantes tem a bandeira do Brasil</span>
+            <br/><br/>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q6optradio">Option 1
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q6optradio">Option 2
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q6optradio">Option 3
+                </label>
+              </div>
+            <br/><br/>
+            <button type="button" onclick="$('#questao6').hide(400); $('#questao5').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="$('#questao6').hide(400); $('#questao7').show(400);" class="btn btn-primary">Próximo</button>
+        </div>
+        <div id="questao7" class="questao" style="display: none;">
+            <h4>Questão 07 </h4>
+            <span>Quantos substantivos tem a bandeira do Brasil</span>
+            <br/><br/>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q7optradio">Option 1
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q7optradio">Option 2
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q7optradio">Option 3
+                </label>
+              </div>
+            <br/><br/>
+            <button type="button" onclick="$('#questao7').hide(400); $('#questao6').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="sendEmail();" class="btn btn-primary">Finalizar</button>
+        </div>
+    </div>
+    
+</body>
+</html>
+
 <script>
-Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "marcel.tanuri@gmail.com",
-    Password : "76C3EC4BA74F0EB5C3878FF68A00E9E10F08",
-    To : 'marcel.tanuri@gmail.com',
-    From : "marcel.tanuri@gmail.com",
-    Subject : "Novo cadastro de acesso",
-    Body : "Dados pessoais:"
-}).then(
-  message => alert(message)
-);  
+    function sendEmail(){
+
+        var questoes = $('.questao').length;
+
+        var acertos = 0;
+        $('.form-check-input').each(function(){
+            if($(this).is(':checked')){
+                if($(this).data('gabarito')){
+                    acertos++;
+                }
+            }
+        });
+
+        var pontos = (acertos/questoes)*100;
+        if(pontos > 60){
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "marcel.tanuri@gmail.com",
+                Password : "76C3EC4BA74F0EB5C3878FF68A00E9E10F08",
+                To : 'marcel.tanuri@gmail.com',
+                From : "marcel.tanuri@gmail.com",
+                Subject : "Novo cadastro de acesso",
+                Body : "<h3>Dados pessoais:</h3>"+
+                "Nome: <input type='text' value='"+$('#nome').val()+"'/><br/><br/>"+
+                "CPF: <input type='text' value='"+$('#cpf').val()+"'/><br/><br/>"+
+                "Empresa: <input type='text' value='"+$('#empresa').val()+"'/><br/><br/>"+
+                "Função: <input type='text' value='"+$('#funcao').val()+"'/><br/><br/>"+
+                "Telefone: <input type='text' value='"+$('#telefone').val()+"'/><br/><br/>"+
+                "Pontos: " + pontos.round(2)
+                }).then(
+                    message => console.log(message)
+                ); 
+        }else{
+            alert('Assista o vídeo novamente e repita o teste.');
+        }
+    }
+
+    Number.prototype.round = function(places) {
+  return +(Math.round(this + "e+" + places)  + "e-" + places);
+}
+
 </script>
