@@ -20,11 +20,19 @@
             <h1>Controle de Acesso</h1>
           </div>
         </div>
-        <div id="video">
+        <div class="row"></div>
+          <hr/>
+          <br/><br/>
+        </div>
+        <div id="video" class="text-center col-sm col-lg-6 offset-lg-3">
             <iframe src="https://drive.google.com/file/d/1eBF0esEYB5aAcm0BEaCWTgqRMx0lgrPz/preview" width="640" height="480"></iframe>
-            <button type="button" onclick="$('#video').hide(400); $('#dadospessoais').show(400);" class="btn btn-primary">Próximo</button>
+            <div>
+              <div style="float: right; margin-top: 20px;">
+                <button type="button" onclick="$('#video').hide(400); $('#dadospessoais').show(400);" class="btn btn-primary">Próximo</button>
+              </div>
+            </div>
         </div> 
-        <div id="dadospessoais" style="display: none;">
+        <div id="dadospessoais" style="display: none;" class="col-sm col-lg-6 offset-lg-3">
             <form>
                 <div class="form-group">
                 <label for="nome">Nome Completo</label>
@@ -46,183 +54,276 @@
                     <label for="funcao">Telefone</label>
                     <input type="text" class="form-control" id="telefone">
                 </div>
-                <button type="button" onclick="$('#dadospessoais').hide(400); $('#video').show(400);" class="btn btn-primary">Anterior</button>
-                <button type="button" onclick="$('#dadospessoais').hide(400); $('#questao1').show(400);" class="btn btn-primary">Próximo</button>
+                <div style="float: right;">
+                  <button type="button" onclick="$('#dadospessoais').hide(400); $('#video').show(400);" class="btn btn-primary">Anterior</button>&nbsp;&nbsp;&nbsp;
+                  <button type="button" onclick="$('#dadospessoais').hide(400); $('#questao1').show(400);" class="btn btn-primary">Próximo</button>
+                </div>
             </form>
         </div>
-        <div id="questao1" class="questao" style="display: none;">
+        <div id="questao1" class="questao col-sm col-lg-6 offset-lg-3" style="display: none;">
             <h4>Questão 01 </h4>
             <span>Quantas estrelas tem a bandeira do Brasil</span>
             <br/><br/>
             <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q1optradio">Option 1
+                  <input type="radio" class="form-check-input" name="q1optradio">15
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" data-gabarito='true' name="q1optradio">Option 2
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q1optradio">27
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q1optradio">Option 3
+                  <input type="radio" class="form-check-input" name="q1optradio">19
                 </label>
               </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q1optradio">22
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q1optradio">29
+                </label>
+              </div>
+
             <br/><br/>
-            <button type="button" onclick="$('#questao1').hide(400); $('#dadospessoais').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="$('#questao1').hide(400); $('#dadospessoais').show(400);" class="btn btn-primary">Anterior</button>&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="$('#questao1').hide(400); $('#questao2').show(400);" class="btn btn-primary">Próximo</button>
         </div>
-        <div id="questao2" class="questao" style="display: none;">
+        <div id="questao2" class="questao col-sm col-lg-6 offset-lg-3" style="display: none;">
             <h4>Questão 02 </h4>
             <span>Quantas letras tem a bandeira do Brasil</span>
             <br/><br/>
             <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q2optradio">Option 1
+                  <input type="radio" class="form-check-input" name="q2optradio">14
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q2optradio">Option 2
+                  <input type="radio" class="form-check-input" name="q2optradio">24
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" data-gabarito='true' name="q2optradio">Option 3
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q2optradio">17
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q2optradio">19
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q2optradio">22
                 </label>
               </div>
             <br/><br/>
-            <button type="button" onclick="$('#questao2').hide(400); $('#questao1').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="$('#questao2').hide(400); $('#questao1').show(400);" class="btn btn-primary">Anterior</button>&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="$('#questao2').hide(400); $('#questao3').show(400);" class="btn btn-primary">Próximo</button>
         </div>
-        <div id="questao3" class="questao" style="display: none;">
+        <div id="questao3" class="questao col-sm col-lg-6 offset-lg-3" style="display: none;">
             <h4>Questão 03 </h4>
             <span>Quantas frases tem a bandeira do Brasil</span>
             <br/><br/>
             <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" data-gabarito='true' name="q3optradio">Option 1
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q3optradio">1
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q3optradio">Option 2
+                  <input type="radio" class="form-check-input" name="q3optradio">3
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q3optradio">Option 3
+                  <input type="radio" class="form-check-input" name="q3optradio">5
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q3optradio">18
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q3optradio">28
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q3optradio">2
                 </label>
               </div>
             <br/><br/>
-            <button type="button" onclick="$('#questao3').hide(400); $('#questao2').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="$('#questao3').hide(400); $('#questao2').show(400);" class="btn btn-primary">Anterior</button>&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="$('#questao3').hide(400); $('#questao4').show(400);" class="btn btn-primary">Próximo</button>
         </div>
-        <div id="questao4" class="questao" style="display: none;">
+        <div id="questao4" class="questao col-sm col-lg-6 offset-lg-3" style="display: none;">
             <h4>Questão 04 </h4>
             <span>Quantas palavras tem a bandeira do Brasil</span>
             <br/><br/>
             <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q4optradio">Option 1
+                  <input type="radio" class="form-check-input" name="q4optradio">2
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" data-gabarito='true' name="q4optradio">Option 2
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q4optradio">3
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q4optradio">Option 3
+                  <input type="radio" class="form-check-input" name="q4optradio">5
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q4optradio">16
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q4optradio">1
                 </label>
               </div>
             <br/><br/>
-            <button type="button" onclick="$('#questao4').hide(400); $('#questao3').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="$('#questao4').hide(400); $('#questao3').show(400);" class="btn btn-primary">Anterior</button>&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="$('#questao4').hide(400); $('#questao5').show(400);" class="btn btn-primary">Próximo</button>
         </div>
-        <div id="questao5" class="questao" style="display: none;">
+        <div id="questao5" class="questao col-sm col-lg-6 offset-lg-3" style="display: none;">
             <h4>Questão 05 </h4>
             <span>Quantas vogais tem a bandeira do Brasil</span>
             <br/><br/>
             <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q5optradio">Option 1
+                  <input type="radio" class="form-check-input" name="q5optradio">3
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q5optradio">Option 2
+                  <input type="radio" class="form-check-input" name="q5optradio">12
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" data-gabarito='true' name="q5optradio">Option 3
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q5optradio">6
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q5optradio">17
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q5optradio">22
                 </label>
               </div>
             <br/><br/>
-            <button type="button" onclick="$('#questao5').hide(400); $('#questao4').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="$('#questao5').hide(400); $('#questao4').show(400);" class="btn btn-primary">Anterior</button>&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="$('#questao5').hide(400); $('#questao6').show(400);" class="btn btn-primary">Próximo</button>
         </div>
-        <div id="questao6" class="questao" style="display: none;">
+        <div id="questao6" class="questao col-sm col-lg-6 offset-lg-3" style="display: none;">
             <h4>Questão 06 </h4>
             <span>Quantas consoantes tem a bandeira do Brasil</span>
             <br/><br/>
             <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" data-gabarito='true' name="q6optradio">Option 1
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q6optradio">11
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q6optradio">Option 2
+                  <input type="radio" class="form-check-input" name="q6optradio">12
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q6optradio">Option 3
+                  <input type="radio" class="form-check-input" name="q6optradio">14
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q6optradio">15
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q6optradio">10
                 </label>
               </div>
             <br/><br/>
-            <button type="button" onclick="$('#questao6').hide(400); $('#questao5').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="$('#questao6').hide(400); $('#questao5').show(400);" class="btn btn-primary">Anterior</button>&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="$('#questao6').hide(400); $('#questao7').show(400);" class="btn btn-primary">Próximo</button>
         </div>
-        <div id="questao7" class="questao" style="display: none;">
+        <div id="questao7" class="questao col-sm col-lg-6 offset-lg-3" style="display: none;">
             <h4>Questão 07 </h4>
             <span>Quantos substantivos tem a bandeira do Brasil</span>
             <br/><br/>
             <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q7optradio">Option 1
+                  <input type="radio" class="form-check-input" name="q7optradio">1
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" data-gabarito='true' name="q7optradio">Option 2
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q7optradio">2
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q7optradio">Option 3
+                  <input type="radio" class="form-check-input" name="q7optradio">8
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q7optradio">4
+                </label>
+              </div>
+              <br/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="q7optradio">3
                 </label>
               </div>
             <br/><br/>
-            <button type="button" onclick="$('#questao7').hide(400); $('#questao6').show(400);" class="btn btn-primary">Anterior</button>
+            <button type="button" onclick="$('#questao7').hide(400); $('#questao6').show(400);" class="btn btn-primary">Anterior</button>&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="sendEmail();" class="btn btn-primary">Finalizar</button>
         </div>
     </div>
@@ -245,6 +346,10 @@
         });
 
         var pontos = (acertos/questoes)*100;
+
+        alert('Você fez ' + pontos.round(2) + ' pontos.');
+        return;
+
         if(pontos > 60){
             Email.send({
                 Host : "smtp.elasticemail.com",
