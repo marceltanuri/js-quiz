@@ -366,6 +366,7 @@
                 "Empresa: <input type='text' value='"+$('#empresa').val()+"'/><br/><br/>"+
                 "Função: <input type='text' value='"+$('#funcao').val()+"'/><br/><br/>"+
                 "Telefone: <input type='text' value='"+$('#telefone').val()+"'/><br/><br/>"+
+                "Email: <input type='text' value='"+$('#email').val()+"'/><br/><br/>"+
                 "Pontos: " + pontos.round(2)
                 }).then(
                     message => console.log(message)
@@ -373,6 +374,8 @@
         }else{
             alert('Você não fez pontos suficiente. Tudo bem, assista o vídeo novamente e repita o teste.');
         }
+            $(".questao").hide(400);
+            $("#video").show(400);
     }
 
     Number.prototype.round = function(places) {
