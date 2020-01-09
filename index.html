@@ -25,12 +25,10 @@
           <br/><br/>
         </div>
         <div id="video" class="text-center col-sm col-lg-6 offset-lg-3">
-            <iframe src="https://drive.google.com/file/d/1eBF0esEYB5aAcm0BEaCWTgqRMx0lgrPz/preview" width="640" height="480"></iframe>
-            <div>
-              <div style="float: right; margin-top: 20px;">
-                <button type="button" onclick="$('#video').hide(400); $('#dadospessoais').show(400);" class="btn btn-primary">Próximo</button>
-              </div>
-            </div>
+            <iframe id="iframe" src="https://drive.google.com/file/d/1eBF0esEYB5aAcm0BEaCWTgqRMx0lgrPz/preview?autoplay=0"  width="600" height="400"></iframe>
+        <div class="form-group" style="margin-top: 20px; margin-left: 120px;">
+              <button type="button" onclick="$('#video').hide(400); $('#dadospessoais').show(400);" class="btn btn-primary">Próximo</button>
+        </div>
         </div> 
         <div id="dadospessoais" style="display: none;" class="col-sm col-lg-6 offset-lg-3">
             <form id="form_dadospessoais">
@@ -331,6 +329,8 @@
             <button type="button" onclick="sendEmail();" class="btn btn-primary">Finalizar</button>
         </div>
     </div>
+    <div class="row" style="height: 100px;">
+      </div>
     
 </body>
 </html>
@@ -395,6 +395,10 @@ $(document).ready(function()
           event.preventDefault();
         }
     });
+});
+
+$("#iframe").ready(function(){
+  $(this).click();
 });
 
 </script>
