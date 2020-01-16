@@ -10,10 +10,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
  </head>
 
 <body>
-
     <div class="container">
         <div class="row">
           <div class="col-sm text-center">
@@ -24,8 +25,31 @@
           <hr/>
           <br/><br/>
         </div>
-        <div id="video" class="text-center col-sm col-lg-6 offset-lg-3">
-            <iframe id="iframe" src="https://drive.google.com/file/d/1eBF0esEYB5aAcm0BEaCWTgqRMx0lgrPz/preview?autoplay=0"  width="600" height="400"></iframe>
+        <div id="video" class="text-center">
+          <iframe id="iframe_video" width="760" height="515" frameborder="0" src="https://www.youtube.com/embed/-zQ3iKrFeJ0?rel=0&autoplay=1&modestbranding=1&showinfo=0&controls=0" allow="accelerometer; autoplay; encrypted-media; gyroscope" allowfullscreen></iframe>
+            <!-- <iframe id="iframe" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" src="https://drive.google.com/file/d/1eBF0esEYB5aAcm0BEaCWTgqRMx0lgrPz/preview?autoplay=0"  width="600" height="400"></iframe> -->
+            <!-- <video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="640"
+    height="264"
+    poster="MY_VIDEO_POSTER.jpg"
+    data-setup="{}"
+  >
+    <source src="Portugues1.mp4" type="video/mp4" />
+    <source src="Portugues1.mp4" type="video/webm" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
+
+  <script src="https://vjs.zencdn.net/7.6.6/video.js"></script> -->
         <div class="form-group" style="margin-top: 20px; margin-left: 120px;">
               <button type="button" onclick="$('#video').hide(400); $('#dadospessoais').show(400);" class="btn btn-primary">Próximo</button>
         </div>
@@ -34,27 +58,27 @@
             <form id="form_dadospessoais">
                 <div class="form-group">
                 <label for="nome">Nome Completo</label>
-                <input required type="text" class="form-control" id="nome">
+                <input requiredd type="text" class="form-control" id="nome">
                 </div>
                 <div class="form-group">
                     <label for="cpf">CPF</label>
-                    <input required type="number" class="form-control" id="cpf">
+                    <input requiredd type="number" class="form-control" id="cpf">
                 </div>
                 <div class="form-group">
                     <label for="empresa">Empresa</label>
-                    <input required type="text" class="form-control" id="empresa">
+                    <input requiredd type="text" class="form-control" id="empresa">
                 </div>
                 <div class="form-group">
                     <label for="funcao">Função</label>
-                    <input required type="text" class="form-control" id="funcao">
+                    <input requiredd type="text" class="form-control" id="funcao">
                 </div>
                 <div class="form-group">
                     <label for="funcao">Telefone</label>
-                    <input required type="tel" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" class="form-control" id="telefone">
+                    <input requiredd type="tel" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" class="form-control" id="telefone">
                 </div>
                 <div class="form-group">
                   <label for="funcao">E-mail</label>
-                  <input required type="email" class="form-control" id="email">
+                  <input requiredd type="email" class="form-control" id="email">
               </div>
                 <div style="float: right;">
                   <button type="button" onclick="$('#dadospessoais').hide(400); $('#video').show(400);" class="btn btn-primary">Anterior</button>&nbsp;&nbsp;&nbsp;
@@ -64,121 +88,99 @@
         </div>
         <div id="questao1" class="questao col-sm col-lg-6 offset-lg-3" style="display: none;">
             <h4>Questão 01 </h4>
-            <span>Quantas estrelas tem a bandeira do Brasil</span>
+            <span>O que o toque do alarme INTERMITENTE significa? Assinale a alternativa correta</span>
             <br/><br/>
             <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q1optradio">15
+                  <input type="radio" class="form-check-input" name="q1optradio">Final da Emergência
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" data-gabarito='true' name="q1optradio">27
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q1optradio">Horário de Almoço
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q1optradio">19
+                  <input type="radio" class="form-check-input" name="q1optradio">Situação de Emergência
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q1optradio">22
+                  <input type="radio" class="form-check-input" name="q1optradio">Final de Expediente
                 </label>
               </div>
               <br/>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q1optradio">29
-                </label>
-              </div>
-
             <br/><br/>
             <button type="button" onclick="$('#questao1').hide(400); $('#dadospessoais').show(400);" class="btn btn-primary">Anterior</button>&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="$('#questao1').hide(400); $('#questao2').show(400);" class="btn btn-primary">Próximo</button>
         </div>
         <div id="questao2" class="questao col-sm col-lg-6 offset-lg-3" style="display: none;">
             <h4>Questão 02 </h4>
-            <span>Quantas letras tem a bandeira do Brasil</span>
+            <span>O que fazer quando soar o alarme de emergência? Assinale a alternativa correta:</span>
             <br/><br/>
             <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q2optradio">14
+                  <input type="radio" class="form-check-input" name="q2optradio">Correr imediatamente para o local da emergência e combate-la
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q2optradio">24
+                  <input type="radio" class="form-check-input" name="q2optradio">Correr para a enfermaria ou para a área de emergência
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" data-gabarito='true' name="q2optradio">17
+                  <input type="radio" class="form-check-input" name="q2optradio">Ligar para o ramal 999
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" data-gabarito='true' name="q2optradio">19
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q2optradio">Manter a calma e seguir orientação do Monitor de Área ou funcionário Oxiteno Responsável pela Área.
                 </label>
               </div>
               <br/>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="radio" class="form-check-input" data-gabarito='true' name="q2optradio">22
-                </label>
-              </div>
             <br/><br/>
             <button type="button" onclick="$('#questao2').hide(400); $('#questao1').show(400);" class="btn btn-primary">Anterior</button>&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="$('#questao2').hide(400); $('#questao3').show(400);" class="btn btn-primary">Próximo</button>
         </div>
         <div id="questao3" class="questao col-sm col-lg-6 offset-lg-3" style="display: none;">
             <h4>Questão 03 </h4>
-            <span>Quantas frases tem a bandeira do Brasil</span>
+            <span>Quais são os Equipamentos de Proteção Individual (EPI's) básicos, obrigatórios para acessar as áreas produtivas? Assinale mais de uma alternativa:</span>
             <br/><br/>
             <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" data-gabarito='true' name="q3optradio">1
+                  <input type="checkbox" class="form-check-input" data-gabarito='true' name="q3optradio">Capacete
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q3optradio">3
+                  <input type="checkbox" class="form-check-input" name="q3optradio">Cinto de segurança tipo pára-quedista
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q3optradio">5
+                  <input type="checkbox" class="form-check-input" name="q3optradio">Óculos de segurança ampla visão
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q3optradio">18
+                  <input type="checkbox" class="form-check-input" name="q3optradio">Bota ou calçado de segurança
                 </label>
               </div>
               <br/>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q3optradio">28
-                </label>
-              </div>
-              <br/>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q3optradio">2
-                </label>
-              </div>
             <br/><br/>
             <button type="button" onclick="$('#questao3').hide(400); $('#questao2').show(400);" class="btn btn-primary">Anterior</button>&nbsp;&nbsp;&nbsp;
-            <button type="button" onclick="$('#questao3').hide(400); $('#questao4').show(400);" class="btn btn-primary">Próximo</button>
+            <button type="button" onclick="$('#questao3').hide(400); $('#questao7').show(400);" class="btn btn-primary">Próximo</button>
         </div>
         <div id="questao4" class="questao col-sm col-lg-6 offset-lg-3" style="display: none;">
             <h4>Questão 04 </h4>
@@ -292,38 +294,21 @@
             <button type="button" onclick="$('#questao6').hide(400); $('#questao7').show(400);" class="btn btn-primary">Próximo</button>
         </div>
         <div id="questao7" class="questao col-sm col-lg-6 offset-lg-3" style="display: none;">
-            <h4>Questão 07 </h4>
-            <span>Quantos substantivos tem a bandeira do Brasil</span>
+            <h4>Questão 04 </h4>
+            <span>Você leu e compreendeu as instruções contidas na ART-007 que trata sobre visita as instalações?</span>
             <br/><br/>
             <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q7optradio">1
+                  <input type="radio" class="form-check-input" data-gabarito='true' name="q7optradio">Sim
                 </label>
               </div>
               <br/>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="radio" class="form-check-input" data-gabarito='true' name="q7optradio">2
+                  <input type="radio" class="form-check-input" name="q7optradio">Não
                 </label>
               </div>
               <br/>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q7optradio">8
-                </label>
-              </div>
-              <br/>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q7optradio">4
-                </label>
-              </div>
-              <br/>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="q7optradio">3
-                </label>
-              </div>
             <br/><br/>
             <button type="button" onclick="$('#questao7').hide(400); $('#questao6').show(400);" class="btn btn-primary">Anterior</button>&nbsp;&nbsp;&nbsp;
             <button type="button" onclick="sendEmail();" class="btn btn-primary">Finalizar</button>
@@ -400,5 +385,6 @@ $(document).ready(function()
 $("#iframe").ready(function(){
   $(this).click();
 });
+
 
 </script>
